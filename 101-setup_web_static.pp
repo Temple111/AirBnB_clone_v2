@@ -4,7 +4,7 @@
 $nginx_conf = "server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
+    add_header X-Served-By ${hostname};
     root   /var/www/html;
     index  index.html index.htm;
     location /hbnb_static {
@@ -12,7 +12,7 @@ $nginx_conf = "server {
         index index.html index.htm;
     }
     location /redirect_me {
-        return 301 https://samuelanozie.me/;
+        return 301 http://github.com/besthor/;
     }
     error_page 404 /404.html;
     location /404 {
